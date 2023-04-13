@@ -17,4 +17,8 @@ ngOnInit(): void {
 
 }
 
+onClick(){
+  console.log('This is a debug message from a button')
+}
+
 }
