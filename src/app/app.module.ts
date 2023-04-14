@@ -9,6 +9,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { UploadPageComponent } from './components/upload-page/upload-page.component';
+import { ArchiveComponent } from './components/archive/archive.component';
 
 
 
@@ -27,7 +29,9 @@ const appRoute: Routes= [
     AppComponent,
     HeaderComponent,
     ButtonComponent,
-    ContactComponent
+    ContactComponent,
+    UploadPageComponent,
+    ArchiveComponent
   ],
   imports: [
     BrowserModule,
