@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit{
 
   title: string = 'Bothnia Papers';
 
-  toggleAddTask(){
+  goToUpload(){
     console.log("toggle")
 
   }
