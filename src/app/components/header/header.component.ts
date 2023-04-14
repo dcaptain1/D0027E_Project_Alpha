@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -12,8 +13,8 @@ export class HeaderComponent implements OnInit{
 
   title: string = 'Bothnia Papers';
 
-  goToUpload(){
-    console.log("toggle")
+  goToAboutPage(){
+    console.log("going to about page...")
 
   }
 }
