@@ -33,5 +33,7 @@ build/
 .vscode/
 /.angular
 /.angular/cache
+/.angular/*
 node_modules
+.angular
 
