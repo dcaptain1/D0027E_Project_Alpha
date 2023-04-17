@@ -1,4 +1,4 @@
-<h1>Please drag and drop your photos here:</h1>
+<p>Upload image by drag and drop, or by choosing a file: </p>
 
 
 <head>
@@ -26,6 +26,12 @@
     
     </body>
 
+    <form>
+        <br><label for="myfile">Select image: </label>
+        <input type="file" id="myfile" name="myfile"><br><br>
+        
+    </form>
+
 <form>
     <div class="form-group">
         <label for="First Name"> First Name</label><br>
@@ -40,11 +46,18 @@
         <input type="text" id="Email" class="form-control">
     </div><br>
     <div class="form-group">
-        <label for="category">Category </label>
-        <select name="" id="category" class="form-control">
-            <option value=""></option>
-            <option *ngFor="let c for categories" [value]="c.id">{{ c.name }}</option>
-        </select>
+        <label for="Description"> Description</label><br>
+        <input type="text" id="Description" class="form-control">
     </div><br>
+    <p><label for="tags">Please provide your image with helpful search tags:</label></p>
+        <textarea id="tags" name="Keywords" rows="4" cols="50"></textarea><br>
+    
+    <div class="form-group">   
+        <label for="category">Choose a category: </label>
+        <select name="categories" id="categories">
+            <option value=""></option>
+            <option *ngFor="let c of categories" [value]="c.id">{{c.name}}</option>
+        </select>
+    </div><br>    
     <input type="button" value="Save">
 </form>
