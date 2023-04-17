@@ -5,17 +5,21 @@
     <!-- this is the header -->
 
 
+
+
   </app-header>
 
 
   <router-outlet>
       <!-- this is the main view -->
-      <ul>
-        <li> <a [routerLink]="'Home'">Home</a></li>
+
+        <div> <a [routerLink]="'Home'">Home</a> </div>
+
+        <ul>
         <li> <a [routerLink]="'About'">About</a></li>
         <li> <a [routerLink]="'Upload-page'">Upload-page</a></li>
         <li> <a [routerLink]="'Archive'">Archive</a></li>
-      </ul>
+        </ul>
 
   </router-outlet>
 

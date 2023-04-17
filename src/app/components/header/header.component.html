@@ -5,11 +5,35 @@
 
 <h1>{{title}} </h1>
 
-<app-button
-  color= "gray"
-  text="About"
-  (btnClick)="goToAboutPage()">
-</app-button>
+<div>
+  <app-button
+    [routerLink]="'Home'"
+    color= "gray"
+    text="Home"
+    (btnClick)="goToAboutPage()">
+  </app-button>
+
+  <app-button
+    [routerLink]="'About'"
+    color= "gray"
+    text="About"
+    (btnClick)="goToAboutPage()">
+  </app-button>
+
+  <app-button
+    [routerLink]="'Upload-page'"
+    color= "gray"
+    text="Upload"
+    (btnClick)="goToAboutPage()">
+  </app-button>
+
+  <app-button
+    [routerLink]="'Archive'"
+    color= "gray"
+    text="Archive"
+    (btnClick)="goToAboutPage()">
+  </app-button>
+</div>
 
 </header>
  </div>
