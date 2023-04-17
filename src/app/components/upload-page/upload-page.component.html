@@ -1,10 +1,50 @@
-<p>upload-page works!</p>
+<h1>Please drag and drop your photos here:</h1>
 
 
+<head>
+    <script>
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+    
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    
+    
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+    }
+    </script>
+    </head>
+    <body>
+    
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div><br>
+    
+    <img id="drag1"  draggable="true" ondragstart="drag(event)" width="336" height="69">
+    
+    </body>
 
-
-<div>
-
-  <h1> SKriver man skit här</h1>
-
-</div>
+<form>
+    <div class="form-group">
+        <label for="First Name"> First Name</label><br>
+        <input type="text" id="First name" class="form-control">
+    </div><br>
+    <div class="form-group">
+        <label for="Last Name"> Last Name</label><br>
+        <input type="text" id="Last name" class="form-control">
+    </div><br>
+    <div class="form-group">
+        <label for="Email"> Email</label><br>
+        <input type="text" id="Email" class="form-control">
+    </div><br>
+    <div class="form-group">
+        <label for="category">Category </label>
+        <select name="" id="category" class="form-control">
+            <option value=""></option>
+            <option *ngFor="let c for categories" [value]="c.id">{{ c.name }}</option>
+        </select>
+    </div><br>
+    <input type="button" value="Save">
+</form>
