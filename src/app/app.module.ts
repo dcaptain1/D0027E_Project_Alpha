@@ -19,7 +19,7 @@ const appRoute: Routes= [
   {path: "", redirectTo: "Home", pathMatch: "full"}, // tom url skickar dig till home.
   {path: "Home", component: HomeComponent},
   {path: "About", component: AboutComponent},
-  {path: "Contant", component: ContactComponent},
+  {path: "Contact", component: ContactComponent},
   {path: "Upload-page", component: UploadPageComponent},
   {path: "Archive", component: ArchiveComponent}
 ]
@@ -31,6 +31,8 @@ const appRoute: Routes= [
     AppComponent,
     HeaderComponent,
     ButtonComponent,
+    HomeComponent,
+    AboutComponent,
     ContactComponent,
     UploadPageComponent,
     ArchiveComponent

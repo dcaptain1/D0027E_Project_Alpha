@@ -22,6 +22,6 @@ onClick(){
   this.btnClick.emit();
 }
 
-// I am here ATM: https://youtu.be/3dHNOWTI7H8?t=1700
+// button tutorial: https://youtu.be/3dHNOWTI7H8?t=1700
 
 }
