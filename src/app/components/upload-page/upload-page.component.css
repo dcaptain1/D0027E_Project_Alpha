@@ -1,0 +1,12 @@
+/* Invert styles for elements that should have light text on dark backgrounds */
+h1, h2, h3, h4, h5, h6,
+p, a, span, li, label,
+button, input, select {
+  color: #fcfcfc;
+}
+
+button, input, select, textarea {
+  color: #000000;
+}
+
+
