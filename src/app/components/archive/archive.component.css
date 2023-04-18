@@ -1,1 +1,23 @@
+.container{
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  }
+  .search-bar{
+  width: 200%;
+  max-width: 1000px;
+  min-width: 900px;
+  background:rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 60px;
+  padding: 10px 20px;
+  }
 
+  /* Invert styles for elements that should have light text on dark backgrounds */
+  h1, h2, h3, h4, h5, h6,
+  p, a, span, li, label,
+  button, input, select {
+    color: #fcfcfc;
+  }
