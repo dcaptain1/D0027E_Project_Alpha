@@ -16,7 +16,16 @@
   justify-content: center;
   margin-top: 3rem;
   margin-bottom: 3rem;
-
+  font-size: large;
 
 
 }
+
+.textContainertwo{
+    margin: auto;
+    width: 30%;
+    border: 3px solid rgb(148, 141, 141);
+    padding: 65px;
+    font-size:large;
+  }
+
