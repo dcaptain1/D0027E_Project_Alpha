@@ -37,6 +37,9 @@ build/
 node_modules
 .angular
 .angular/cache
+.angular/cache*
+.angular/cache.
+.angular/cache/
 
 .angular/cache/15.2.6/angular-webpack/250cc29ff355bb48d5d9b64dbe401bb4a2123fe2/2.pack
 .angular/cache/15.2.6/angular-webpack/250cc29ff355bb48d5d9b64dbe401bb4a2123fe2/6.pack
@@ -55,3 +58,13 @@ node_modules
 .angular/cache/15.2.6/angular-webpack/250cc29ff355bb48d5d9b64dbe401bb4a2123fe2/10.pack
 .angular/cache/15.2.6/angular-webpack/250cc29ff355bb48d5d9b64dbe401bb4a2123fe2/11.pack
 .angular/cache/15.2.6/angular-webpack/250cc29ff355bb48d5d9b64dbe401bb4a2123fe2/index.pack
+.angular/cache/15.2.6/angular-webpack/250cc29ff355bb48d5d9b64dbe401bb4a2123fe2/0.pack
+.angular/cache/15.2.6/angular-webpack/250cc29ff355bb48d5d9b64dbe401bb4a2123fe2/2.pack
+.angular/cache/15.2.6/angular-webpack/250cc29ff355bb48d5d9b64dbe401bb4a2123fe2/6.pack
+.angular/cache/15.2.6/angular-webpack/250cc29ff355bb48d5d9b64dbe401bb4a2123fe2/7.pack
+.angular/cache/15.2.6/angular-webpack/250cc29ff355bb48d5d9b64dbe401bb4a2123fe2/8.pack
+.angular/cache/15.2.6/angular-webpack/250cc29ff355bb48d5d9b64dbe401bb4a2123fe2/9.pack
+.angular/cache/15.2.6/angular-webpack/250cc29ff355bb48d5d9b64dbe401bb4a2123fe2/10.pack
+.angular/cache/15.2.6/angular-webpack/250cc29ff355bb48d5d9b64dbe401bb4a2123fe2/11.pack
+.angular/cache/15.2.6/angular-webpack/250cc29ff355bb48d5d9b64dbe401bb4a2123fe2/index.pack
+.angular/cache/15.2.6/angular-webpack/250cc29ff355bb48d5d9b64dbe401bb4a2123fe2/index.pack.old
