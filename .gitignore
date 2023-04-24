@@ -36,6 +36,10 @@ build/
 /.angular/*
 node_modules
 .angular
+.angular/cache
+.angular/cache*
+.angular/cache/
+.angular/cache.
 
 .angular/cache/15.2.6/angular-webpack/250cc29ff355bb48d5d9b64dbe401bb4a2123fe2/0.pack
 .angular/cache/15.2.6/angular-webpack/250cc29ff355bb48d5d9b64dbe401bb4a2123fe2/6.pack
