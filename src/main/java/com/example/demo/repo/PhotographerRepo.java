@@ -7,6 +7,6 @@ import com.example.demo.model.Photographer;
 
 public interface PhotographerRepo extends JpaRepository<Photographer, Long> {
     
-    void deletePhotographer(Long id);
+    void deletePhotographerById(Long id);
     Optional<Photographer> findPhotographerById(Long id);
 }

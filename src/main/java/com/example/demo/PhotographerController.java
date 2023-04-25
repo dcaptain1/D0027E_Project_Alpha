@@ -28,8 +28,8 @@ public class PhotographerController {
     
     @GetMapping("/all")
     public ResponseEntity<List<Photographer>> getAllEmployees() {
-        List<Photographer> photograper = photographerService.findAllPhotographer();
-        return new ResponseEntity<>(photograper, HttpStatus.OK);
+        List<Photographer> photographer = photographerService.findAllPhotographer();
+        return new ResponseEntity<>(photographer, HttpStatus.OK);
     }
 
     @GetMapping("/find/{id}")
@@ -51,8 +51,8 @@ public class PhotographerController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> deletePhotographer(@PathVariable("id") Long id) {
-        photographerService.deletePhotographer(id); 
+    public ResponseEntity<?> deletePhotographerById(@PathVariable("id") Long id) {
+        photographerService.deletePhotographerById(id); 
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

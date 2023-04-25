@@ -36,8 +36,8 @@ public class PhotographerService {
         .orElseThrow(() -> new PhotographerNotFoundException("Photgrapher by id " + id + "was not found"));
     }
 
-    public void deletePhotographer(Long id) {
-        photographerRepo.deletePhotographer(id);
+    public void deletePhotographerById(Long id) {
+        photographerRepo.deletePhotographerById(id);
     }
 
 
