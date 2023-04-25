@@ -1,4 +1,4 @@
-package model;
+package com.example.demo.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -6,9 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-
 @Entity
-public class photographer {
+public class Photograper {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
@@ -18,12 +17,17 @@ public class photographer {
     private String email;
     private String phone;
 
-    public photographer() {}
+    @Column(nullable = false, updatable = false)
+    private String photoGrafCode;
 
-    public photographer(String name, String email, String phone) {
+
+    public Photograper() {}
+
+    public Photograper(String name, String email, String phone) {
         this.name = name;
         this.email = email;
         this.phone = phone;
+        
     }
      
     public String getName() {
@@ -44,6 +48,14 @@ public class photographer {
     public void setPhone(String phone) {
         this.phone = phone;
     }    
+
+    public String getPhotoGrafCode() {
+        return photoGrafCode;
+    }
+
+    public void setPhotoGrafCode(String photoGrafCode) {
+        this.photoGrafCode = photoGrafCode;
+    }
     
     @Override
     public String toString(){
@@ -52,6 +64,7 @@ public class photographer {
         ", name= '" + name + '/' +
         ", email= '" + email + '/' +     
         ", phone= '" + phone + '/' + 
+        ", photoGrafCode= '" + photoGrafCode + '/' +
         '}'; 
 
     }    
