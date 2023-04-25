@@ -55,7 +55,4 @@ public class PhotographerController {
         photographerService.deletePhotographerById(id); 
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
-
-
 }
