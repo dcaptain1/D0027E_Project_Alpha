@@ -7,7 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Photograper {
+public class Photographer {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
@@ -21,9 +21,9 @@ public class Photograper {
     private String photoGrafCode;
 
 
-    public Photograper() {}
+    public Photographer() {}
 
-    public Photograper(String name, String email, String phone) {
+    public Photographer(String name, String email, String phone) {
         this.name = name;
         this.email = email;
         this.phone = phone;

@@ -6,7 +6,7 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.exception.PhotographerNotFoundException;
-import com.example.demo.model.Photograper;
+import com.example.demo.model.Photographer;
 import com.example.demo.repo.PhotographerRepo;
 
 @Service
@@ -18,26 +18,26 @@ public class PhotographerService {
         this.photographerRepo = photographerRepo;
     }
 
-    public Photograper addPhotograper(Photograper photograper){
+    public Photographer addPhotographer(Photographer photograper){
         photograper.setPhotoGrafCode(UUID.randomUUID().toString());
         return photographerRepo.save(photograper);
     }
 
-    public List<Photograper> findAllPhotographer(){
+    public List<Photographer> findAllPhotographer(){
         return photographerRepo.findAll();
     }
 
-    public Photograper updatePhotograper(Photograper photograper) {
+    public Photographer updatePhotograper(Photographer photograper) {
         return photographerRepo.save(photograper);
     }
 
-    public Photograper findPhotographerById(Long id){
+    public Photographer findPhotographerById(Long id){
         return photographerRepo.findPhotographerById(id)
         .orElseThrow(() -> new PhotographerNotFoundException("Photgrapher by id " + id + "was not found"));
     }
 
-    public void deletePhotographerById(Long id) {
-        photographerRepo.deletePhotographerById(id);
+    public void deletePhotographer(Long id) {
+        photographerRepo.deletePhotographer(id);
     }
 
 
