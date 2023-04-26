@@ -21,6 +21,9 @@ public class Images {
     private String year; 
     private String publishedByName; 
 
+    @Column(nullable = false, updatable = false)
+    private String imageCode;
+
     public Images() {}
 
     
@@ -56,25 +59,37 @@ public class Images {
     public void setCategory(String category) {
         this.category = category;
     }
-
-
     public String getYear() {
         return year;
     }
-
-
     public void setYear(String year) {
         this.year = year;
     }
-
-
     public String getPublishedByName() {
         return publishedByName;
     }
-
-
     public void setPublishedByName(String publishedByName) {
         this.publishedByName = publishedByName;
+    }
+    public String getImageCode() {
+        return imageCode;
+    }
+    public void setImageCode(String imageCode) {
+        this.imageCode = imageCode;
+    }    
+
+    @Override
+    public String toString(){
+        return "Photographer{" + 
+        "id=" + id + 
+        ", content= '" + content + '/' +
+        ", title= '" + title + '/' +     
+        ", description= '" + description + '/' + 
+        ", category= '" + category + '/' +
+        ", year= '" + year + '/' +
+        ", publishedByName= '" + publishedByName + '/' +
+        '}'; 
+
     }    
 
 }
