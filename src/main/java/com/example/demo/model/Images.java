@@ -14,9 +14,9 @@ public class Images {
     
     private byte[] content; 
     
-    @Column
-    private String title; 
-    private String description; 
+    @Column(nullable = false)
+    private String title;  
+    private String description;
     private String category; 
     private String year; 
     private String publishedByName; 
@@ -88,8 +88,7 @@ public class Images {
         ", category= '" + category + '/' +
         ", year= '" + year + '/' +
         ", publishedByName= '" + publishedByName + '/' +
+        ", imageCode= '" + imageCode + '/' +
         '}'; 
-
     }    
-
 }

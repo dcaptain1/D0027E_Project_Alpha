@@ -23,6 +23,11 @@ public class PhotographerService {
         return photographerRepo.save(photograper);
     }
 
+    public Images addImages(Images images){
+        images.setImageCode(UUID.randomUUID().toString());
+        return ImagesRepo.save(images);
+    }
+
     public List<Photographer> findAllPhotographer(){
         return photographerRepo.findAll();
     }

@@ -2,6 +2,9 @@ package com.example.demo.service;
 
 import java.util.UUID;
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.model.Images;
@@ -14,10 +17,10 @@ public class ImagesService {
     public ImagesService(ImagesRepo imagesRepo){
         this.imagesRepo = imagesRepo;
     }
-
+    
     public Images addImages(Images images){
         images.setImageCode(UUID.randomUUID().toString());
-        return imagesRepo.save(images);
+        return ImagesRepo.save(images);
     }
 
     public List<Images> findAllImages(){
@@ -31,8 +34,4 @@ public class ImagesService {
     public void deleteImageById(Long id) {
         imagesRepo.deleteImageById(id);
     }
-
-
-
-
 }
