@@ -24,7 +24,8 @@ const appRoute: Routes= [
   {path: "Contact", component: ContactComponent},
   {path: "Upload-page", component: UploadPageComponent},
   {path: "Archive", component: ArchiveComponent},
-  {path: "login", component: LoginComponent}
+  {path: "login", component: LoginComponent},
+  {path: "register", component: RegisteraccountComponent}
 ]
 
 
