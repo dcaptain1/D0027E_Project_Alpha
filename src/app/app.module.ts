@@ -22,7 +22,8 @@ const appRoute: Routes= [
   {path: "About", component: AboutComponent},
   {path: "Contact", component: ContactComponent},
   {path: "Upload-page", component: UploadPageComponent},
-  {path: "Archive", component: ArchiveComponent}
+  {path: "Archive", component: ArchiveComponent},
+  {path: "login", component: LoginComponent}
 ]
 
 
