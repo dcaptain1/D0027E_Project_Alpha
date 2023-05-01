@@ -11,6 +11,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { UploadPageComponent } from './components/upload-page/upload-page.component';
 import { ArchiveComponent } from './components/archive/archive.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 
@@ -35,7 +36,8 @@ const appRoute: Routes= [
     AboutComponent,
     ContactComponent,
     UploadPageComponent,
-    ArchiveComponent
+    ArchiveComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
