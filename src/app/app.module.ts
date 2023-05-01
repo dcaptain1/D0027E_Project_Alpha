@@ -12,6 +12,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { UploadPageComponent } from './components/upload-page/upload-page.component';
 import { ArchiveComponent } from './components/archive/archive.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegisteraccountComponent } from './components/registeraccount/registeraccount.component';
 
 
 
@@ -38,7 +39,8 @@ const appRoute: Routes= [
     ContactComponent,
     UploadPageComponent,
     ArchiveComponent,
-    LoginComponent
+    LoginComponent,
+    RegisteraccountComponent
   ],
   imports: [
     BrowserModule,
