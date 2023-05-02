@@ -9,4 +9,9 @@ button, input, select, textarea {
   color: #000000;
 }
 
+.form_container{
+  margin:7em auto;
+  width: fit-content;
+}
+
 

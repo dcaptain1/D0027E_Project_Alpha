@@ -1,38 +1,42 @@
-<p>Upload image by drag and drop, or by choosing a file: </p>
+<div class="form_container">
+    <p>Upload image by drag and drop, or by choosing a file: </p>
 
-<form>
-    <div class="form-group">
-        <label for="titel"> Titel</label><br>
-        <input type="text" id="Titel" class="form-control">
-    </div><br>
-    <div class="form-group">
-        <label for="Description"> Description</label><br>
-        <input type="text" id="Description" class="form-control">
-    </div><br>
-    <p><label for="tags">Please provide your image with helpful search tags:</label></p>
+    <form>
+
+        <div class="form-group">
+            <label for="titel"> Titel</label><br>
+            <input type="text" id="Titel" class="form-control">
+        </div><br>
+        <div class="form-group">
+            <label for="Description"> Description</label><br>
+            <input type="text" id="Description" class="form-control">
+        </div><br>
+        <p><label for="tags">Please provide your image with helpful search tags:</label></p>
         <textarea id="tags" name="Keywords" rows="4" cols="50"></textarea><br>
 
-    <div class="form-group">
-        <label for="category">Choose a category: </label>
-        <select name="categories" id="categories">
-            <option value=""></option>
-            <option *ngFor="let c of categories" [value]="c.id">{{c.name}}</option>
-        </select>
+        <div class="form-group">
+            <label for="category">Choose a category: </label>
+            <select name="categories" id="categories">
+                <option value=""></option>
+                <option *ngFor="let c of categories" [value]="c.id">{{c.name}}</option>
+            </select>
 
-        <div class="container row">
-    <div class="col-md-6">
-        <input type="file" (change)="onFileChanged($event)">
+            <div class="container row">
+                <div class="col-md-6">
+                    <input type="file" (change)="onFileChanged($event)">
 
-    </div>
-    <div class="col-md-6">
-        <input type="button" (click)="onUpload()" value="upload">
-    </div>
+                </div>
+                <div class="col-md-6">
+                    <input type="button" (click)="onUpload()" value="upload">
+                </div>
+            </div>
+            <hr />
+            <div class="container row">
+                <div class="col-md-12">
+                    <div *ngIf=message>{{message}}</div>
+                </div>
+            </div>
+        </div>
+
+    </form>
 </div>
-<hr />
-<div class="container row">
-    <div class="col-md-12">
-        <div *ngIf=message>{{message}}</div>
-    </div>
-</div>
-
-
