@@ -9,6 +9,12 @@ button, input, select, textarea {
   color: #000000;
 }
 
+textarea{
+  border-radius: 0.2rem;
+  background: #f2f2f2;
+  padding: 0.4rem;
+}
+
 .form_container{
   margin:5em auto;
   width: fit-content;
@@ -30,10 +36,28 @@ border-radius: 0.3em;
 border:0;
 font-size: 1em;
 text-transform: uppercase;
+transition: 0.15s;
 }
+
+.upload:hover{
+  width: 100%;
+  text-align: center;
+  padding: 0.7em;
+  background: #71a1b4;
+  color: #3c2d2d;
+  border-radius: 0.3em;
+  border:0;
+  font-size: 1em;
+  text-transform: uppercase;
+  transition: 0.15s;
+  }
 
 #Titel, #Description{
   width:100%;
+  padding: 0.4rem;
+  border-radius: 0.2rem;
+  border: 0;
+  background: #f2f2f2;
 }
 
 
