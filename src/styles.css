@@ -18,6 +18,31 @@ body {
 
 }
 
+html,
+body {
+
+height: 100%;
+position: relative;
+
+}
+
+app-root {
+
+  min-height: 100%;
+  display: block;  
+  position: relative;  
+  padding-bottom: 90px; 
+  
+  }
+
+  footer {
+
+    position: absolute;   
+    bottom: 0;   
+    width: 100%;
+    
+    }
+
 /* Invert styles for elements that should have light text on dark backgrounds */
 h1, h2, h3, h4, h5, h6,
 p, a, span, li, label,

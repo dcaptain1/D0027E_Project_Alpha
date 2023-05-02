@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { LayoutModule } from '@angular/cdk/layout';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +12,8 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { UploadPageComponent } from './components/upload-page/upload-page.component';
 import { ArchiveComponent } from './components/archive/archive.component';
+import { FooterComponent } from './footer/footer.component';
+
 
 
 
@@ -35,11 +38,13 @@ const appRoute: Routes= [
     AboutComponent,
     ContactComponent,
     UploadPageComponent,
-    ArchiveComponent
+    ArchiveComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    LayoutModule,
     RouterModule.forRoot(appRoute)
   ],
   providers: [],
