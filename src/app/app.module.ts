@@ -14,6 +14,10 @@ import { UploadPageComponent } from './components/upload-page/upload-page.compon
 import { ArchiveComponent } from './components/archive/archive.component';
 import { FooterComponent } from './footer/footer.component';
 
+import { LoginComponent } from './components/login/login.component';
+import { RegisteraccountComponent } from './components/registeraccount/registeraccount.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -24,7 +28,9 @@ const appRoute: Routes= [
   {path: "About", component: AboutComponent},
   {path: "Contact", component: ContactComponent},
   {path: "Upload-page", component: UploadPageComponent},
-  {path: "Archive", component: ArchiveComponent}
+  {path: "Archive", component: ArchiveComponent},
+  {path: "login", component: LoginComponent},
+  {path: "register", component: RegisteraccountComponent}
 ]
 
 
@@ -40,12 +46,16 @@ const appRoute: Routes= [
     UploadPageComponent,
     ArchiveComponent,
     FooterComponent,
+    LoginComponent,
+    RegisteraccountComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     LayoutModule,
-    RouterModule.forRoot(appRoute)
+    RouterModule.forRoot(appRoute),
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
