@@ -15,6 +15,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisteraccountComponent } from './components/registeraccount/registeraccount.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { BooksComponent } from './admin/books/books.component';
+import { AddbookComponent } from './admin/books/addbook/addbook.component';
 
 
 
@@ -27,7 +29,9 @@ const appRoute: Routes= [
   {path: "Upload-page", component: UploadPageComponent},
   {path: "Archive", component: ArchiveComponent},
   {path: "login", component: LoginComponent},
-  {path: "register", component: RegisteraccountComponent}
+  {path: "register", component: RegisteraccountComponent},
+  { path: 'admin/books', component: BooksComponent }
+
 ]
 
 
@@ -43,7 +47,9 @@ const appRoute: Routes= [
     UploadPageComponent,
     ArchiveComponent,
     LoginComponent,
-    RegisteraccountComponent
+    RegisteraccountComponent,
+    BooksComponent,
+    AddbookComponent
   ],
   imports: [
     BrowserModule,
