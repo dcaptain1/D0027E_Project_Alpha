@@ -10,8 +10,31 @@ button, input, select, textarea {
 }
 
 .form_container{
-  margin:7em auto;
+  margin:5em auto;
   width: fit-content;
+  padding: 3em;
 }
+
+.row{
+  width: 100%;
+  margin-bottom:2em;
+}
+
+.upload{
+width: 100%;
+text-align: center;
+padding: 0.7em;
+background: #2b6c86;
+color: #FFFFFF;
+border-radius: 0.3em;
+border:0;
+font-size: 1em;
+text-transform: uppercase;
+}
+
+#Titel, #Description{
+  width:100%;
+}
+
 
 
