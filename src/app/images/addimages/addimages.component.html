@@ -1,0 +1,26 @@
+<h1>Add Image</h1>
+
+<form>
+  <label for="title">Title</label>
+  <input type="text" class="form-control" id="title" placeholder="Image Title" [(ngModel)]="image.title" name="title">
+
+  <label for="description">Description</label>
+  <input type="text" class="form-control" id="description" placeholder="Image description" name="description" [(ngModel)]="image.description">
+
+  <label for="tags">tags</label>
+  <input type="text" class="form-control" id="tags" placeholder="Image Tags" name="tags" [(ngModel)]="image.tags">
+
+  <label for="categories">categories</label>
+  <input type="text" class="form-control" id="categories" placeholder="Image categories" name="categories" [(ngModel)]="image.categories">
+
+  <label for="price">Price</label>
+  <input type="text" class="form-control" id="price" placeholder="price" name="price" [(ngModel)]="image.price">
+
+
+    <br>
+    <input type="file" (change)="onFileChanged($event)">
+    <img [src]="imgURL" height="200" width="200" *ngIf="imgURL">
+
+  <br><br>
+  <button type="button" class="btn btn-success" (click)="saveImage()">Save Image</button>
+</form>

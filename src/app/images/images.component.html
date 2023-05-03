@@ -1,0 +1,27 @@
+<h1>Image upload</h1>
+<a class="btn btn-primary mb-3" (click)="addImage()">Add New Image</a>
+<div class="container row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Image title</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let image of images">
+          <td>{{image.id}}</td>
+          <td>{{image.title}}<td>
+          <td>
+            <button type="button" class="btn btn-primary">Show Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <app-addimages *ngIf="action === 'add'" [image]="selectedImage" (imageAddedEvent)="refreshData()"></app-addimages>
+  </div>
+</div>
