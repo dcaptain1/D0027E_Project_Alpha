@@ -18,6 +18,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisteraccountComponent } from './components/registeraccount/registeraccount.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ImagesComponent } from './images/images.component';
+import { AddimagesComponent } from './images/addimages/addimages.component';
 
 
 
@@ -30,7 +32,8 @@ const appRoute: Routes= [
   {path: "Upload-page", component: UploadPageComponent},
   {path: "Archive", component: ArchiveComponent},
   {path: "login", component: LoginComponent},
-  {path: "register", component: RegisteraccountComponent}
+  {path: "register", component: RegisteraccountComponent},
+  { path: 'images', component: ImagesComponent }
 ]
 
 
@@ -47,7 +50,9 @@ const appRoute: Routes= [
     ArchiveComponent,
     FooterComponent,
     LoginComponent,
-    RegisteraccountComponent
+    RegisteraccountComponent,
+    ImagesComponent,
+    AddimagesComponent
   ],
   imports: [
     BrowserModule,
