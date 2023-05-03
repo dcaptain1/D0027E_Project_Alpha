@@ -11,8 +11,11 @@ button, input, select, textarea {
 
 textarea{
   border-radius: 0.2rem;
-  background: #f2f2f2;
   padding: 0.4rem;
+  border: 1px solid #FFFFFF;
+  background: #f2f2f200;
+  color: #FFFFFF;
+  font-family: "Roboto", sans-serif;
 }
 
 .form_container{
@@ -39,6 +42,19 @@ text-transform: uppercase;
 transition: 0.15s;
 }
 
+.upload:active{
+  width: 100%;
+  text-align: center;
+  padding: 0.7em;
+  background: #f2f2f2;
+  color: #194253;
+  border-radius: 0.3em;
+  border:0;
+  font-size: 1em;
+  text-transform: uppercase;
+  transition: 0.15s;
+  }
+
 .upload:hover{
   width: 100%;
   text-align: center;
@@ -56,9 +72,18 @@ transition: 0.15s;
   width:100%;
   padding: 0.4rem;
   border-radius: 0.2rem;
-  border: 0;
-  background: #f2f2f2;
+  border: 1px solid #FFFFFF;
+  background: #f2f2f200;
+  color: #FFFFFF;
+  font-family: "Roboto", sans-serif;
 }
 
+input[type="file"]::file-selector-button{
+  border: 1px solid #FFFFFF;
+  background: #f2f2f200;
+  color: #FFFFFF;
+  padding: 0.4em 1.2em;
+  border-radius: 0.3rem;
+}
 
 
