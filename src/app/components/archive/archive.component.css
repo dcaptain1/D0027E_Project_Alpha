@@ -57,6 +57,7 @@ h1{
     border: 0px;
     transition: 0.2s;
     margin-top: 1em;
+    cursor: pointer;
   }
 
   #search:hover{
@@ -72,4 +73,5 @@ h1{
   #SearchIcon{
   background-color: #ffffff00;
   border: 0;
+  cursor: pointer;
   }
