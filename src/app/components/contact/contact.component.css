@@ -5,6 +5,23 @@
   margin-top: 1rem;
   margin-bottom: 3rem;
 
-
-
 }
+
+
+#ContactContainer
+{
+  width:40em;
+ /* float:left;*/
+  margin-left: 15em; 
+  margin-top: 5em;
+}
+
+/*
+#ContactContainer1{
+  float:clear;
+}
+
+#container1{
+  margin:5em 10em;
+
+}*/
