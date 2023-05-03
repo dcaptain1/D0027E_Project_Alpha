@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { LayoutModule } from '@angular/cdk/layout';
+
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -52,7 +52,6 @@ const appRoute: Routes= [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LayoutModule,
     RouterModule.forRoot(appRoute),
     HttpClientModule,
     FormsModule
