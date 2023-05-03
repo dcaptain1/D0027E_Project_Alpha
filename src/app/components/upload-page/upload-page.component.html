@@ -4,11 +4,11 @@
     <form>
 
         <div class="form-group">
-            <label for="titel"> Titel</label><br>
+            <label for="titel"> Titel:</label><br>
             <input type="text" id="Titel" class="form-control">
         </div><br>
         <div class="form-group">
-            <label for="Description"> Description</label><br>
+            <label for="Description"> Description:</label><br>
             <input type="text" id="Description" class="form-control">
         </div><br>
 
@@ -30,7 +30,8 @@
             <div class="container">
                 <div class="col-md-6 row">
                     <p>Chooose an image to upload:</p>
-                    <input type="file" (change)="onFileChanged($event)">
+                    <input type="file" name="Upload image" (change)="onFileChanged($event)">
+                 <!-- <img src="..\assets\Images\upload_icon.png" alt=""> --> 
 
                 </div>
                 <div class="col-md-6 row">
