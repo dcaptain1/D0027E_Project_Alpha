@@ -1,49 +1,32 @@
-
 <div>
-<header>
+  <header>
 
-<div [routerLink]="'Home'">
+    <div [routerLink]="'Home'">
 
-  <h1>{{title}}</h1>
+      <h1>{{title}}</h1>
+    </div>
+
+
+    <!-- Alla knappar -->
+
+    <div>
+      <app-button [routerLink]="'Home'" color="gray" text="Home" (btnClick)="goToAboutPage()">
+      </app-button>
+
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="display: inline;">ng
+        <a routerLink="/images" class="dropdown-item">Images</a>
+      </div>
+
+      <app-button [routerLink]="'About'" color="gray" text="About" (btnClick)="goToAboutPage()">
+      </app-button>
+
+      <app-button [routerLink]="'Contact'" color="gray" text="Contact" (btnClick)="goToAboutPage()">
+      </app-button>
+
+      <app-button [routerLink]="'login'" color="gray" text="Log In" (btnClick)="goToAboutPage()">
+      </app-button>
+
+    </div>
+
+  </header>
 </div>
-
-
-<!-- Alla knappar -->
-
-<div>
-  <app-button
-    [routerLink]="'Home'"
-    color= "gray"
-    text="Home"
-    (btnClick)="goToAboutPage()">
-  </app-button>
-
-  <app-button
-    [routerLink]="'About'"
-    color= "gray"
-    text="About"
-    (btnClick)="goToAboutPage()">
-  </app-button>
-
-  <app-button
-    [routerLink]="'Contact'"
-    color= "gray"
-    text="Contact"
-    (btnClick)="goToAboutPage()">
-  </app-button>
-
-  <app-button
-    [routerLink]="'login'"
-    color= "gray"
-    text="Log In"
-    (btnClick)="goToAboutPage()">
-  </app-button>
-
-  <div class="dropdown-menu" aria-labelledby="navbarDropdown">ng
-    <a routerLink="/images" class="dropdown-item">Images</a>
-</div>
-
-</div>
-
-</header>
- </div>
