@@ -71,7 +71,7 @@
 </div>
 
 <div class="container row">
-  
+
   <div class="col-md-10 custom-products-cart-container">
       <div class="offset-md-8">
           <ul class="nav navbar-nav navbar-right">
@@ -111,12 +111,12 @@
 <div class="container row">
   <div class="col-md-4" *ngFor="let image of images; let i=index">
       <div class="card card-block">
-          <img class="custom-image-style" img src="{{image.retrievedImage}}" height="300" width="200" style="margin-left: 60px;
+          <img class="custom-image-style" img src="{{image.retrievedImage}}" height="500" width="500" style="margin-left: 60px;
         margin-top: 10px">
           <div class="book-desc-container row">
               <div>
                   <p style="margin-left: 60px"><strong>{{image.title}}: ${{image.price}}</strong></p>
-                  
+
               </div>
               <div class="offset-md-4 col-md-4">
                   <button class="btn btn-primary btn-sm" (click)="addToCart(image.id)"
