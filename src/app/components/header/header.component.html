@@ -10,20 +10,21 @@
     <!-- Alla knappar -->
 
     <div>
-      <app-button [routerLink]="'Home'" color="gray" text="Home" (btnClick)="goToAboutPage()">
+      <app-button [routerLink]="'Home'" color="gray" text="Home">
       </app-button>
 
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="display: inline;">ng
-        <a routerLink="/images" class="dropdown-item">Images</a>
-      </div>
 
-      <app-button [routerLink]="'About'" color="gray" text="About" (btnClick)="goToAboutPage()">
+      <app-button [routerLink]="'Images'" color="gray" text="Images">
       </app-button>
 
-      <app-button [routerLink]="'Contact'" color="gray" text="Contact" (btnClick)="goToAboutPage()">
+
+      <app-button [routerLink]="'About'" color="gray" text="About">
       </app-button>
 
-      <app-button [routerLink]="'login'" color="gray" text="Log In" (btnClick)="goToAboutPage()">
+      <app-button [routerLink]="'Contact'" color="gray" text="Contact">
+      </app-button>
+
+      <app-button [routerLink]="'login'" color="gray" text="Log In">
       </app-button>
 
     </div>
