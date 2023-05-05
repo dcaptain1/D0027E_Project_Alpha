@@ -33,7 +33,7 @@ const appRoute: Routes= [
   {path: "Archive", component: ArchiveComponent},
   {path: "login", component: LoginComponent},
   {path: "register", component: RegisteraccountComponent},
-  { path: 'images', component: ImagesComponent }
+  { path: "Images", component: ImagesComponent }
 ]
 
 

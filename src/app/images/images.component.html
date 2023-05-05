@@ -1,3 +1,6 @@
+
+<div class="container">
+
 <h1>Image upload</h1>
 <a class="btn btn-primary mb-3" (click)="addImage()">Add New Image</a>
 <div class="container row">
@@ -24,4 +27,8 @@
   <div class="col-md-6">
     <app-addimages *ngIf="action === 'add'" [image]="selectedImage" (imageAddedEvent)="refreshData()"></app-addimages>
   </div>
+</div>
+
+
+
 </div>
