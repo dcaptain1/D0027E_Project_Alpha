@@ -6,4 +6,6 @@ export class Image {
     tags: string;
     picByte: string;  
     categories: string;  
+    retrievedImage: string; 
+    isAdded: boolean;
     }
