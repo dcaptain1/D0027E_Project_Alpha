@@ -1,89 +1,57 @@
-/* Invert styles for elements that should have light text on dark backgrounds */
-h1, h2, h3, h4, h5, h6,
-p, a, span, li, label,
-button, input, select {
-  color: #fcfcfc;
+label{
+  line-height: 2.3;
 }
 
-button, input, select, textarea {
-  color: #000000;
-}
-
-textarea{
-  border-radius: 0.2rem;
-  padding: 0.4rem;
+input {
+  padding: 0.5rem;
+  border-radius: 0.3rem;
   border: 1px solid #FFFFFF;
   background: #f2f2f200;
   color: #FFFFFF;
-  font-family: "Roboto", sans-serif;
 }
 
-.form_container{
-  margin:5em auto;
-  width: fit-content;
-  padding: 3em;
+.btn{
+ padding: 0.5rem;
+ border-radius: 0.3rem;
+ border: 0;
+ background: #2b6c86;
+ color: #FFFFFF;
+ cursor: pointer;
+ transition: 0.2s;
 }
 
-.row{
-  width: 100%;
-  margin-bottom:2em;
+.btn:hover{
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  border: 0;
+  background: #86bace;
+  color: #312f2f;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-.upload{
-width: 100%;
-text-align: center;
-padding: 0.7em;
-background: #2b6c86;
-color: #FFFFFF;
-border-radius: 0.3em;
-border:0;
-font-size: 1em;
-text-transform: uppercase;
-transition: 0.15s;
-}
-
-.upload:active{
-  width: 100%;
-  text-align: center;
-  padding: 0.7em;
-  background: #f2f2f2;
-  color: #194253;
-  border-radius: 0.3em;
-  border:0;
-  font-size: 1em;
-  text-transform: uppercase;
-  transition: 0.15s;
-  }
-
-.upload:hover{
-  width: 100%;
-  text-align: center;
-  padding: 0.7em;
-  background: #71a1b4;
-  color: #3c2d2d;
-  border-radius: 0.3em;
-  border:0;
-  font-size: 1em;
-  text-transform: uppercase;
-  transition: 0.15s;
-  }
-
-#Titel, #Description{
-  width:100%;
-  padding: 0.4rem;
-  border-radius: 0.2rem;
-  border: 1px solid #FFFFFF;
-  background: #f2f2f200;
+.btn:active{
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  border: 0;
+  background: #0e2e3a;
   color: #FFFFFF;
-  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 input[type="file"]::file-selector-button{
-  border: 1px solid #FFFFFF;
-  background: #f2f2f200;
-  color: #FFFFFF;
-  padding: 0.4em 1.2em;
-  border-radius: 0.3rem;
+  cursor: pointer;
+  border-radius: 0.2rem;
+  padding: 0.2em 0.8em;
+  border: 0;
 }
 
-
+input[type="file"]::file-selector-button:active{
+  cursor: pointer;
+  border-radius: 0.2rem;
+  padding: 0.2em 0.8em;
+  border: 0;
+  background: #5b5b5b;
+  color: #FFFFFF;
+}

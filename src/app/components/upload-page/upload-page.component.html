@@ -1,50 +1,27 @@
-<div class="form_container">
-    <p>Upload image by drag and drop, or by choosing a file: </p>
+<h1>Upload your images</h1>
 
-    <form>
+<form>
+  <label for="title">Title</label><br>
+  <input type="text" class="form-control" id="title" placeholder="Image Title" [(ngModel)]="image.title" name="title"><br><br>
 
-        <div class="form-group">
-            <label for="titel"> Titel:</label><br>
-            <input type="text" id="Titel" class="form-control">
-        </div><br>
-        <div class="form-group">
-            <label for="Description"> Description:</label><br>
-            <input type="text" id="Description" class="form-control">
-        </div><br>
+  <label for="description">Description</label><br>
+  <input type="text" class="form-control" id="description" placeholder="Image description" name="description" [(ngModel)]="image.description"><br><br>
 
-        <div class="row">
-            <p><label for="tags">Please provide your image with helpful search tags:</label></p>
-            <textarea id="tags" name="Keywords" rows="4" cols="50"></textarea>
-        </div>
+  <label for="tags">tags</label><br>
+  <input type="text" class="form-control" id="tags" placeholder="Image Tags" name="tags" [(ngModel)]="image.tags"><br><br>
 
-        <div class="form-group">
-            <div class="row">
-                <label for="category">Choose a category: </label>
-                <br>
-                <select name="categories" id="categories">
-                    <option value=""></option>
-                    <option *ngFor="let c of categories" [value]="c.id">{{c.name}}</option>
-                </select>
-            </div>
+  <label for="categories">categories</label><br>
+  <input type="text" class="form-control" id="categories" placeholder="Image categories" name="categories" [(ngModel)]="image.categories"><br><br>
 
-            <div class="container">
-                <div class="col-md-6 row">
-                    <p>Chooose an image to upload:</p>
-                    <input type="file" name="Upload image" (change)="onFileChanged($event)">
-                 <!-- <img src="..\assets\Images\upload_icon.png" alt=""> --> 
+  <label for="price">Price</label><br>
+  <input type="text" class="form-control" id="price" placeholder="price" name="price" [(ngModel)]="image.price"><br>
 
-                </div>
-                <div class="col-md-6 row">
-                    <input type="button" (click)="onUpload()" value="upload" class="upload">
-                </div>
-            </div>
-            <hr />
-            <div class="container row">
-                <div class="col-md-12">
-                    <div *ngIf=message>{{message}}</div>
-                </div>
-            </div>
-        </div>
+    <br>
+    <label for="price">Chooose an image to upload</label><br>
+    <input type="file" (change)="onFileChanged($event)">
+    <img [src]="imgURL" height="200" width="200" *ngIf="imgURL">
 
-    </form>
-</div>
+  <br><br>
+  <button type="button" class="btn btn-success" (click)="saveImage()">Save Image</button>
+</form>
+

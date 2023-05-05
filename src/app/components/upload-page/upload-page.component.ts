@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpEventType } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Image } from 'src/app/model/Image';
+import { HttpClientService } from 'src/app/service/http-client.service';
 
 @Component({
   selector: 'app-upload-page',
@@ -7,58 +10,57 @@ import { HttpClient, HttpEventType } from '@angular/common/http';
   styleUrls: ['./upload-page.component.css']
 })
 export class UploadPageComponent implements OnInit {
-  categories =[
-    { id: 1, name: 'Entertainment' },
-    { id: 2, name: 'News' },
-    { id: 3, name: 'Politics' },
-    { id: 4, name: 'Sports' },
-    { id: 5, name: 'Culture' },
-    { id: 6, name: 'Economy' },
-    { id: 7, name: 'Nature' },
-];
 
-  constructor (private httpClient: HttpClient) {}
+  @Input()
+  image: Image;
 
-  selectedFile: File;
-  retrievedImage: any;
-  base64Data: any;
-  retrieveResonse: any;
-  message: string;
-  imageName: any;
+  @Output()
+  imageAddedEvent = new EventEmitter();
 
+  private selectedFile: any;
+  imgURL: any;
+
+  constructor(private httpClientService: HttpClientService,
+    private activedRoute: ActivatedRoute,
+    private router: Router,
+    private httpClient: HttpClient) { }
 
   ngOnInit() {
   }
 
-   //Gets called when the user selects an image
-   public onFileChanged(event: any) {
-    //Select File
+  public onFileChanged(event: any) {
+    console.log(event);
     this.selectedFile = event.target.files[0];
+
+    let reader = new FileReader();
+    reader.readAsDataURL(event.target.files[0]);
+    reader.onload = (event2) => {
+      this.imgURL = reader.result;
+    };
+
   }
 
-  //Gets called when the user clicks on submit to upload the image
-  onUpload() {
-    console.log(this.selectedFile);
+  saveImage() {
 
+    const uploadData = new FormData();
+    uploadData.append('imageFile', this.selectedFile, this.selectedFile.name);
+    this.selectedFile.imageName = this.selectedFile.name;
 
-    //FormData API provides methods and properties to allow us easily prepare form data to be sent with POST HTTP requests.
-    const uploadImageData = new FormData();
-    uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
-
-
-    console.log("hit kommer den....")
-    //Make a call to the Spring Boot Application to save the image
-    this.httpClient.post('http://localhost:8090/image/upload', uploadImageData, { observe: 'response' })
-
+    this.httpClient.post('http://localhost:8091/images/upload', uploadData, { observe: 'response' })
       .subscribe((response) => {
-        console.log("hit kommer den inte")
-
         if (response.status === 200) {
-          this.message = 'Image uploaded successfully';
+          this.httpClientService.addImage(this.image).subscribe(
+            (image: any) => {
+              this.imageAddedEvent.emit();
+              this.router.navigate(['images']);
+            }
+          );
+          console.log('Image uploaded successfully');
         } else {
-          this.message = 'Image not uploaded successfully';
+          console.log('Image not uploaded successfully');
         }
       }
       );
   }
 }
+
