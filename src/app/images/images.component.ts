@@ -14,7 +14,7 @@ export class ImagesComponent implements OnInit {
   selectedImage: Image;
   action: string;
 
- 
+
 
   constructor(private httpClientService: HttpClientService,
     private activedRoute: ActivatedRoute,
@@ -41,7 +41,7 @@ export class ImagesComponent implements OnInit {
 
   addImage() {
     this.selectedImage = new Image();
-    this.router.navigate(['images'], { queryParams: { action: 'add' } });
+    this.router.navigate(['Images'], { queryParams: { action: 'add' } });
   }
 }
 
