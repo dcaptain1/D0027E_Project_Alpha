@@ -18,14 +18,15 @@
           <td>{{image.id}}</td>
           <td>{{image.title}}<td>
           <td>
-            <button type="button" class="btn btn-primary">Show Details</button>
+            <button type="button" class="btn btn-primary" (click)="viewImage(image.id)">Show Details</button>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
   <div class="col-md-6">
-    <app-addimages *ngIf="action === 'add'" [image]="selectedImage" (imageAddedEvent)="refreshData()"></app-addimages>
+    <app-addimages *ngIf="action === 'edit' || action === 'add'" [image]="selectedImage" (imageAddedEvent)="refreshData()"></app-addimages> <br>
+    <app-viewimages *ngIf="action === 'view'" [images]="selectedImage" (imagekDeletedEvent)="refreshData()"></app-viewimages>
   </div>
 </div>
 

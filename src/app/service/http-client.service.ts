@@ -16,4 +16,12 @@ export class HttpClientService {
   getImages() {
     return this.httpClient.get<Image[]>('http://localhost:8091/images/get');
   }
-}
+
+  deleteImage(id: any) {
+    return this.httpClient.delete<Image>('http://localhost:8091/images/' + id);
+  }
+
+  updateImage(updatedImage: Image) {
+    return this.httpClient.put<Image>('http://localhost:8091/images/update', updatedImage);
+  }
+} 

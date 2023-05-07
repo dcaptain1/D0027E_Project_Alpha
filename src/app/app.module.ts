@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 import { ImagesComponent } from './images/images.component';
 import { AddimagesComponent } from './images/addimages/addimages.component';
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
+import { ViewimagesComponent } from './images/viewimages/viewimages.component';
 
 
 
@@ -55,7 +56,8 @@ const appRoute: Routes= [
     RegisteraccountComponent,
     ImagesComponent,
     AddimagesComponent,
-    AdminPageComponent
+    AdminPageComponent,
+    ViewimagesComponent
   ],
   imports: [
     BrowserModule,

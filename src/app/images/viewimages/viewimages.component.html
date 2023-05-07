@@ -1,0 +1,25 @@
+<h1>Image Details</h1>
+
+<table>
+    <tr>
+        <td>Image Id</td>
+        <td>{{images.id}}</td>
+    </tr>
+    <tr>
+        <td> Image title</td>
+        <td>{{images.title}}</td>
+    </tr>
+    <tr>
+        <td>Image description</td>
+        <td>{{images.description}}</td>
+    </tr>
+    <tr>
+        <td> Price</td>
+        <td>{{images.price}}</td>
+    </tr>
+</table>
+<br>
+<img src="{{images.retrievedImage}}" height="200" width="200">
+<br><br>
+<a class="btn btn-small btn-warning" (click)="editImage()">edit</a>  
+<a class="btn btn-small btn-danger" (click)="deleteImage()">delete</a>

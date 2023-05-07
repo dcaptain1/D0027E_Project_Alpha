@@ -1,5 +1,5 @@
-<h1>Add Image</h1>
 
+<h2>{{image.id == null ? 'Add' : 'Edit'}} Image - {{image.id}}</h2>
 <form>
   <label for="title">Title</label><br>
   <input type="text" class="form-control" id="title" placeholder="Image Title" [(ngModel)]="image.title" name="title"><br><br>
