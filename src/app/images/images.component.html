@@ -26,7 +26,7 @@
   </div>
   <div class="col-md-6">
     <app-addimages *ngIf="action === 'edit' || action === 'add'" [image]="selectedImage" (imageAddedEvent)="refreshData()"></app-addimages> <br>
-    <app-viewimages *ngIf="action === 'view'" [images]="selectedImage" (imagekDeletedEvent)="refreshData()"></app-viewimages>
+    <app-viewimages *ngIf="action === 'view'" [images]="selectedImage" (imageDeletedEvent)="refreshData()"></app-viewimages>
   </div>
 </div>
 
