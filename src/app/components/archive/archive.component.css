@@ -87,17 +87,6 @@ h1{
     /* outline: red dotted; */
   }
 
-  .col-md-4{
-
-  }
-
-
-  .card-card-block{
-
-
-
-
-  }
 
   .custom-image-style{
     display: inline;
@@ -105,4 +94,6 @@ h1{
     margin: auto;
     width: 220px;
     max-height: 200px;
+    margin-left: 60px;
+        margin-top: 10px
   }
