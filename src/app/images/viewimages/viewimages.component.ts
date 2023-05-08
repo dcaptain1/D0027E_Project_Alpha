@@ -26,13 +26,13 @@ export class ViewimagesComponent implements OnInit {
     this.httpClientService.deleteImage(this.image.id).subscribe(
       (image) => {
         this.imageDeletedEvent.emit();
-        this.router.navigate(['images']);
+        this.router.navigate(['Images']);
       }
     );
   }
 
   editImage() {
-    this.router.navigate(['images'], { queryParams: { action: 'edit', id: this.image.id } });
+    this.router.navigate(['Images'], { queryParams: { action: 'edit', id: this.image.id } });
   }
 
 }

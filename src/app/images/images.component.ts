@@ -11,9 +11,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ImagesComponent implements OnInit {
 
   images: Array<Image>;
+  action: string;
   imagesRecieved: Array<Image>;
   selectedImage: any;
-  action: string;
+  
 
 
 
