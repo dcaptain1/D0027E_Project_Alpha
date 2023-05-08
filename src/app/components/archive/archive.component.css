@@ -14,7 +14,7 @@ h1{
   display: flex;
   justify-content: center;
   }
-  
+
   #search-bar{
   width: 200%;
   max-width: 1000px;
@@ -74,4 +74,35 @@ h1{
   background-color: #ffffff00;
   border: 0;
   cursor: pointer;
+  }
+
+
+
+
+  .container_row{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 70%;
+    /* outline: red dotted; */
+  }
+
+  .col-md-4{
+
+  }
+
+
+  .card-card-block{
+
+
+
+
+  }
+
+  .custom-image-style{
+    display: inline;
+    padding: 4px;
+    margin: auto;
+    width: 220px;
+    max-height: 200px;
   }
