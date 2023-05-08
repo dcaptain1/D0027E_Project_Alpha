@@ -11,7 +11,7 @@ import { HttpClientService } from 'src/app/service/http-client.service';
 export class ViewimagesComponent implements OnInit {
 
   @Input()
-  images: Image;
+  image: Image;
 
   @Output()
   imageDeletedEvent = new EventEmitter();
@@ -23,7 +23,7 @@ export class ViewimagesComponent implements OnInit {
   }
 
   deleteImage() {
-    this.httpClientService.deleteImage(this.images.id).subscribe(
+    this.httpClientService.deleteImage(this.image.id).subscribe(
       (image) => {
         this.imageDeletedEvent.emit();
         this.router.navigate(['images']);
@@ -32,7 +32,7 @@ export class ViewimagesComponent implements OnInit {
   }
 
   editImage() {
-    this.router.navigate(['images'], { queryParams: { action: 'edit', id: this.images.id } });
+    this.router.navigate(['images'], { queryParams: { action: 'edit', id: this.image.id } });
   }
 
 }

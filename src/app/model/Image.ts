@@ -5,7 +5,7 @@ export class Image {
     price: number;
     tags: string;
     picByte: string;  
-    categories: string;  
+    category: string;  
     retrievedImage: string; 
     isAdded: boolean;
     }

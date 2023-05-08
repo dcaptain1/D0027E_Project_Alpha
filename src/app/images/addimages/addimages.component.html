@@ -1,5 +1,6 @@
 
 <h2>{{image.id == null ? 'Add' : 'Edit'}} Image - {{image.id}}</h2>
+
 <form>
   <label for="title">Title</label><br>
   <input type="text" class="form-control" id="title" placeholder="Image Title" [(ngModel)]="image.title" name="title"><br><br>
@@ -10,17 +11,19 @@
   <label for="tags">tags</label><br>
   <input type="text" class="form-control" id="tags" placeholder="Image Tags" name="tags" [(ngModel)]="image.tags"><br><br>
 
-  <label for="categories">categories</label><br>
-  <input type="text" class="form-control" id="categories" placeholder="Image categories" name="categories" [(ngModel)]="image.categories"><br><br>
+  <label for="category">category</label><br>
+  <input type="text" class="form-control" id="category" placeholder="Image category" name="category" [(ngModel)]="image.category"><br><br>
 
   <label for="price">Price</label><br>
   <input type="text" class="form-control" id="price" placeholder="price" name="price" [(ngModel)]="image.price"><br>
 
+
+  <div class="form-group" *ngIf="image.id == null">
+    <!-- only show this field on adding an image -->
     <br>
-    <label for="price">Chooose an image to upload</label><br>
     <input type="file" (change)="onFileChanged($event)">
     <img [src]="imgURL" height="200" width="200" *ngIf="imgURL">
-
+  </div>
   <br><br>
   <button type="button" class="btn btn-success" (click)="saveImage()">Save Image</button>
 </form>

@@ -3,23 +3,31 @@
 <table>
     <tr>
         <td>Image Id</td>
-        <td>{{images.id}}</td>
+        <td>{{image.id}}</td>
     </tr>
     <tr>
         <td> Image title</td>
-        <td>{{images.title}}</td>
+        <td>{{image.title}}</td>
     </tr>
     <tr>
         <td>Image description</td>
-        <td>{{images.description}}</td>
+        <td>{{image.description}}</td>
+    </tr>
+    <tr>
+        <td> Image category</td>
+        <td>{{image.category}}</td>
+    </tr>
+    <tr>
+        <td> Image tags</td>
+        <td>{{image.tags}}</td>
     </tr>
     <tr>
         <td> Price</td>
-        <td>{{images.price}}</td>
+        <td>{{image.price}}</td>
     </tr>
 </table>
 <br>
-<img src="{{images.retrievedImage}}" height="200" width="200">
+<img src="{{image.retrievedImage}}" height="200" width="200">
 <br><br>
 <a class="btn btn-small btn-warning" (click)="editImage()">edit</a>  
 <a class="btn btn-small btn-danger" (click)="deleteImage()">delete</a>
