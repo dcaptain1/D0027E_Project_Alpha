@@ -10,6 +10,7 @@ import { HttpClientService } from 'src/app/service/http-client.service';
 })
 export class ViewimagesComponent implements OnInit {
 
+
   @Input()
   image: Image;
 
