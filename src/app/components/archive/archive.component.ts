@@ -34,7 +34,7 @@ export class ArchiveComponent implements OnInit {
   }
 
   // we will be taking the books response returned from the database
-  // and we will be adding the retrieved   
+  // and we will be adding the retrieved
   handleSuccessfulResponse(response: any) {
     this.images = new Array<Image>();
     //get books returned by the api call
@@ -46,7 +46,7 @@ export class ArchiveComponent implements OnInit {
       imagewithRetrievedImageField.title = image.title;
       //populate retrieved image field so that images can be displayed
       imagewithRetrievedImageField.retrievedImage = 'data:image/jpeg;base64,' + image.picByte;
-      
+
       imagewithRetrievedImageField.price = image.price;
       imagewithRetrievedImageField.picByte = image.picByte;
       this.images.push(imagewithRetrievedImageField);
@@ -61,7 +61,7 @@ export class ArchiveComponent implements OnInit {
     let cartData = [];
     //retrieve cart data from localstorage
     let data = localStorage.getItem('cart');
-    //prse it to json 
+    //prse it to json
     if (data !== null) {
       cartData = JSON.parse(data);
     }

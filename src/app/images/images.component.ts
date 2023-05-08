@@ -33,7 +33,7 @@ export class ImagesComponent implements OnInit {
       (params) => {
         // get the url parameter named action. this can either be add or view.
         this.action = params['action'];
-	// get the parameter id. this will be the id of the book whose details 
+	// get the parameter id. this will be the id of the book whose details
 	// are to be displayed when action is view.
 	const id = params['id'];
 	// if id exists, convert it to integer and then retrive the book from
@@ -48,19 +48,19 @@ export class ImagesComponent implements OnInit {
   }
 
   // we will be taking the books response returned from the database
-  // and we will be adding the retrieved   
+  // and we will be adding the retrieved
   handleSuccessfulResponse(response: any) {
     this.images = new Array<Image>();
     //get books returned by the api call
     this.imagesRecieved = response;
     for (const image of this.imagesRecieved) {
-    
+
       const imagewithRetrievedImageField = new Image();
       imagewithRetrievedImageField.id = image.id;
       imagewithRetrievedImageField.title = image.title;
       //populate retrieved image field so that images can be displayed
       imagewithRetrievedImageField.retrievedImage = 'data:image/jpeg;base64,' + image.picByte;
-      
+
       imagewithRetrievedImageField.price = image.price;
       imagewithRetrievedImageField.picByte = image.picByte;
       this.images.push(imagewithRetrievedImageField);
