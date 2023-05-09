@@ -59,6 +59,9 @@ export class ImagesComponent implements OnInit {
       const imagewithRetrievedImageField = new Image();
       imagewithRetrievedImageField.id = image.id;
       imagewithRetrievedImageField.title = image.title;
+      imagewithRetrievedImageField.description = image.description;
+      imagewithRetrievedImageField.category = image.category;
+      imagewithRetrievedImageField.tags= image.tags;
       //populate retrieved image field so that images can be displayed
       imagewithRetrievedImageField.retrievedImage = 'data:image/jpeg;base64,' + image.picByte;
 
