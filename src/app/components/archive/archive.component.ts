@@ -14,12 +14,17 @@ export class ArchiveComponent implements OnInit {
   imagesRecieved: Array<Image>;
 
 
-  cartImages: any;
 
+  cartImages: any;
+  savedSearchKeyword: any;
+  visibleImages: Image[];
   constructor(private router: Router, private httpClientService: HttpClientService) { }
 
 
   ngOnInit() {
+
+
+
     this.httpClientService.getImages().subscribe(
       response => this.handleSuccessfulResponse(response),
     );
@@ -35,15 +40,29 @@ export class ArchiveComponent implements OnInit {
 
   // Search Engine
   searchByKeyword(searchKeyword: any){
-    console.log("Searching for: "+searchKeyword);
+    console.log("current: "+searchKeyword);
+    this.savedSearchKeyword = searchKeyword;
 
 
+    const buttonSearch = document.getElementById('buttonSearch') as HTMLButtonElement;
+    buttonSearch.addEventListener('click', () => {
+      // Your button click event handler code here
+      console.log("CLICK! You are now searching for: "+this.savedSearchKeyword)
+      this.httpClientService.getImages().subscribe(
+        response => this.handleSuccessfulResponse(response),
+      );
+    });
 
 
   }
 
+
+
+
   // we will be taking the books response returned from the database
   // and we will be adding the retrieved
+
+
   handleSuccessfulResponse(response: any) {
     this.images = new Array<Image>();
     //get books returned by the api call
@@ -61,6 +80,8 @@ export class ArchiveComponent implements OnInit {
       this.images.push(imagewithRetrievedImageField);
     }
   }
+
+
 
   addToCart(imageId: any) {
     //retrieve book from books array using the book id
