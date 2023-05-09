@@ -16,7 +16,13 @@
 <div class="container">
   <form action="" class="search-bar">
     <div id="search-bar">
-      <input type="text" placeholder="Search for pictures..." name="Q">
+
+      <input matInput
+      #searchKeyword
+      (keyup)="searchByKeyword(searchKeyword.value)"
+       placeholder="Search for pictures..." name="Q">
+
+
       <button type="submit" id="SearchIcon">
         <img src="..\assets\Images/search_icon.png" alt="Picture of search icon"></button>
     </div>

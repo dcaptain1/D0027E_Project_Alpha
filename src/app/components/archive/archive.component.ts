@@ -33,6 +33,15 @@ export class ArchiveComponent implements OnInit {
     }
   }
 
+  // Search Engine
+  searchByKeyword(searchKeyword: any){
+    console.log("Searching for: "+searchKeyword);
+
+
+
+
+  }
+
   // we will be taking the books response returned from the database
   // and we will be adding the retrieved
   handleSuccessfulResponse(response: any) {
@@ -87,6 +96,10 @@ export class ArchiveComponent implements OnInit {
     this.cartImages = [];
     localStorage.clear();
   }
+
+
+
+
 
 }
 
