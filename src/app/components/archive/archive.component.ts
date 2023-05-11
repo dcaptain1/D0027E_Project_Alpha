@@ -47,11 +47,44 @@ export class ArchiveComponent implements OnInit {
     const buttonSearch = document.getElementById('buttonSearch') as HTMLButtonElement;
     buttonSearch.addEventListener('click', () => {
       // Your button click event handler code here
-      console.log("CLICK! You are now searching for: "+this.savedSearchKeyword)
-      this.httpClientService.getImages().subscribe(
-        response => this.handleSuccessfulResponse(response),
-      );
+      console.log("CLICK! You are now searching for: "+this.savedSearchKeyword);
+      console.log("===================================");
+
+
+
+
+        //Sök kod här...
+
+
+
+
+        for (let i = 0; i < this.images.length; i++) {
+          //console.log (this.images[i].title);
+          if (this.images[i].title.toString().includes(this.savedSearchKeyword) ) {
+            console.log("FOUND IMAGE: "+this.images[i].title);
+
+            //Updatera synliga bilder här...
+
+
+
+            break;
+
+
+
+
+
+          }else{
+            console.log("Nothing found....");
+          }
+
+
+        }
+
+
+        //console.log(this.images[2].title);
+
     });
+
 
 
   }
@@ -67,6 +100,9 @@ export class ArchiveComponent implements OnInit {
     this.images = new Array<Image>();
     //get books returned by the api call
     this.imagesRecieved = response;
+
+
+
     for (const image of this.imagesRecieved) {
 
       const imagewithRetrievedImageField = new Image();
@@ -79,6 +115,9 @@ export class ArchiveComponent implements OnInit {
       imagewithRetrievedImageField.picByte = image.picByte;
       this.images.push(imagewithRetrievedImageField);
     }
+
+
+
   }
 
 
