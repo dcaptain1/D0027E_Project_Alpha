@@ -11,6 +11,8 @@ import { HttpClientService } from 'src/app/service/http-client.service';
 export class ArchiveComponent implements OnInit {
 
   images: Array<Image>;
+  imagesStored: Array<Image>;
+
   imagesRecieved: Array<Image>;
 
 
@@ -46,6 +48,11 @@ export class ArchiveComponent implements OnInit {
 
     const buttonSearch = document.getElementById('buttonSearch') as HTMLButtonElement;
     buttonSearch.addEventListener('click', () => {
+      //Töm listan..
+      //this.imagesStored = [];
+      this.imagesStored = new Array<Image>();
+
+
       // Your button click event handler code here
       console.log("CLICK! You are now searching for: "+this.savedSearchKeyword);
       console.log("===================================");
@@ -58,13 +65,34 @@ export class ArchiveComponent implements OnInit {
 
 
 
+
         for (let i = 0; i < this.images.length; i++) {
           //console.log (this.images[i].title);
           if (this.images[i].title.toString().includes(this.savedSearchKeyword) ) {
-            console.log("FOUND IMAGE: "+this.images[i].title);
+            //console.log("FOUND IMAGE: "+this.images[i].title);
+
 
             //Updatera synliga bilder här...
 
+
+
+
+              const imagewithRetrievedImageField = new Image();
+              imagewithRetrievedImageField.id = this.images[i].id;
+              imagewithRetrievedImageField.title = this.images[i].title;
+              //populate retrieved image field so that images can be displayed
+              imagewithRetrievedImageField.retrievedImage = 'data:image/jpeg;base64,' + this.images[i].picByte;
+
+              imagewithRetrievedImageField.price = this.images[i].price;
+              imagewithRetrievedImageField.picByte = this.images[i].picByte;
+              this.imagesStored.push(imagewithRetrievedImageField);
+
+
+
+
+              for (let i = 0; i < this.imagesStored.length; i++) {
+                console.log("Stored images: "+this.imagesStored[0].title);
+              }
 
 
             break;
@@ -98,6 +126,7 @@ export class ArchiveComponent implements OnInit {
 
   handleSuccessfulResponse(response: any) {
     this.images = new Array<Image>();
+
     //get books returned by the api call
     this.imagesRecieved = response;
 
