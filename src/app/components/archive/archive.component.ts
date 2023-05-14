@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Image } from 'src/app/model/Image';
 import { HttpClientService } from 'src/app/service/http-client.service';
 
@@ -14,21 +14,36 @@ export class ArchiveComponent implements OnInit {
   imagesStored: Array<Image>;
 
   imagesRecieved: Array<Image>;
+  selectedImage:any; 
+  action: string;
 
 
 
   cartImages: any;
   savedSearchKeyword: any;
   visibleImages: Image[];
-  constructor(private router: Router, private httpClientService: HttpClientService) { }
+  constructor(private router: Router, private activedRoute: ActivatedRoute,private httpClientService: HttpClientService) { }
 
 
   ngOnInit() {
-
-
-
     this.httpClientService.getImages().subscribe(
       response => this.handleSuccessfulResponse(response),
+    );
+    this.activedRoute.queryParams.subscribe(
+      (params) => {
+        // get the url parameter named action. this can either be add or view.
+        this.action = params['action'];
+	// get the parameter id. this will be the id of the book whose details
+	// are to be displayed when action is view.
+	const id = params['id'];
+	// if id exists, convert it to integer and then retrive the book from
+	// the books array
+    if (id) {
+        this.selectedImage = this.images.find(image => {
+        return image.id === + id;
+          });
+        }
+      }
     );
     //from localstorage retrieve the cart item
     let data = localStorage.getItem('cart');
@@ -137,6 +152,9 @@ export class ArchiveComponent implements OnInit {
       const imagewithRetrievedImageField = new Image();
       imagewithRetrievedImageField.id = image.id;
       imagewithRetrievedImageField.title = image.title;
+      imagewithRetrievedImageField.description = image.description;
+      imagewithRetrievedImageField.category = image.category;
+      imagewithRetrievedImageField.tags= image.tags;
       //populate retrieved image field so that images can be displayed
       imagewithRetrievedImageField.retrievedImage = 'data:image/jpeg;base64,' + image.picByte;
 
@@ -184,6 +202,10 @@ export class ArchiveComponent implements OnInit {
   emptyCart() {
     this.cartImages = [];
     localStorage.clear();
+  }
+
+  detailsImage(id: number) {
+    this.router.navigate(['Archive'], { queryParams: { id, action: 'view' } });
   }
 
 
