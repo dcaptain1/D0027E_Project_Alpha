@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Image } from 'src/app/model/Image';
+import { PopUpComponent } from 'src/app/pop-up/pop-up.component';
 import { HttpClientService } from 'src/app/service/http-client.service';
+
 
 @Component({
   selector: 'app-archive',
@@ -10,11 +12,13 @@ import { HttpClientService } from 'src/app/service/http-client.service';
 })
 export class ArchiveComponent implements OnInit {
 
+
+
   images: Array<Image>;
   imagesStored: Array<Image>;
 
   imagesRecieved: Array<Image>;
-  selectedImage:any; 
+  selectedImage:any;
   action: string;
 
 
@@ -22,6 +26,7 @@ export class ArchiveComponent implements OnInit {
   cartImages: any;
   savedSearchKeyword: any;
   visibleImages: Image[];
+  dialog: any;
   constructor(private router: Router, private activedRoute: ActivatedRoute,private httpClientService: HttpClientService) { }
 
 
@@ -211,7 +216,4 @@ export class ArchiveComponent implements OnInit {
 
 
 
-
 }
-
-

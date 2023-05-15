@@ -47,7 +47,14 @@
               <div class="offset-md-4 col-md-4">
                   <button class="btn btn-primary btn-sm" (click)="addToCart(image.id)"
                      >Add To Cart</button>
+
+                     <div class="tooltip" (mouseover)="detailsImage(image.id)">  Details
+                      <span class="tooltiptext">
+                          <app-details *ngIf="action === 'view'" [image]="selectedImage"></app-details>
+                      </span>
+                    </div>
               </div>
+
           </div>
 
       </div>
@@ -93,10 +100,22 @@
 <hr>
 
 
+<!--
+<div class="detailContainer">
+  <div>
+    <h1> Details: </h1>
+    <app-details *ngIf="action === 'view'" [image]="selectedImage"></app-details>
 
+  </div>
+
+</div>
+ -->
 
 <div class="container_row">
+
   <div class="col-md-4" *ngFor="let image of images; let i=index">
+
+
       <div class="card-card-block">
           <img class="custom-image-style" img src="{{image.retrievedImage}}" >
 
@@ -106,13 +125,37 @@
 
               </div>
               <div class="offset-md-4 col-md-4">
-                <button type="button" class="btn btn-primary" (click)="detailsImage(image.id)">Details</button>
+                <!-- <button type="button" class="btn btn-primary" (click)="detailsImage(image.id)">Details</button> -->
                 <button class="btn btn-primary btn-sm" (click)="addToCart(image.id)"
                      >Add To Cart</button>
+
+                     <div class="tooltip" (mouseover)="detailsImage(image.id)">  Details
+                      <span class="tooltiptext">
+                          <app-details *ngIf="action === 'view'" [image]="selectedImage"></app-details>
+                      </span>
+                    </div>
               </div>
-              <app-details *ngIf="action === 'view'" [image]="selectedImage"></app-details>
+
           </div>
 
+
+
+
+
       </div>
+
+
+
   </div>
+
+
+
+
+
+
+
+
 </div>
+
+
+
