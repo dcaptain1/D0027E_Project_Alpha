@@ -88,7 +88,12 @@ export class ArchiveComponent implements OnInit {
 
         for (let i = 0; i < this.images.length; i++) {
           //console.log (this.images[i].title);
-          if (this.images[i].title.toString().includes(this.savedSearchKeyword) ) {
+          if (this.images[i].title.toString().includes(this.savedSearchKeyword) ||
+          (this.images[i].tags.toString().includes(this.savedSearchKeyword)
+
+
+
+          )) {
             //console.log("FOUND IMAGE: "+this.images[i].title);
 
 

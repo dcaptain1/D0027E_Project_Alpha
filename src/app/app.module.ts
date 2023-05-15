@@ -24,7 +24,7 @@ import { AdminPageComponent } from './components/admin-page/admin-page.component
 import { ViewimagesComponent } from './images/viewimages/viewimages.component';
 import { DetailsComponent } from './components/archive/details/details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PopUpComponent } from './pop-up/pop-up.component';
+
 
 
 
@@ -66,7 +66,7 @@ const appRoute: Routes= [
     AdminPageComponent,
     ViewimagesComponent,
     DetailsComponent,
-    PopUpComponent,
+
 
 
 
