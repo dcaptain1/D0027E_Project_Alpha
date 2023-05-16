@@ -79,47 +79,24 @@ h1{
 
 
 
-  .container_row{
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto;
-    width: 70%;
-    /* outline: red dotted; */
-  }
 
 
-  .custom-image-style{
-    display: inline;
-    padding: 4px;
-    margin: auto;
-    width: 220px;
-    max-height: 200px;
-    margin-left: 60px;
-        margin-top: 10px
-  }
-
-
-  .detailContainer{
-    width: 20%;
-    height: auto;
-    /*border: red dotted;*/
-    display: flex;
-    position: fixed;
-    right: 0;
-    justify-self: center;
-    align-items: center;
-    text-align: left;
-  }
 
 
 
   .tooltip {
+    border-radius: 24px;
+    height: 25px;
+    width: 60px;
+    text-align: center;
+    color: black;
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted black;
+    border: black 2px;
     background-color: gray;
     margin: 3px;
     padding: 1px;
+
   }
 
   .tooltip .tooltiptext {
@@ -139,3 +116,64 @@ h1{
   .tooltip:hover .tooltiptext {
     visibility: visible;
   }
+  .tooltip:hover{
+    background-color: rgb(221, 221, 221);
+  }
+
+
+  .addToCartButton{
+    border-radius: 24px;
+    background-color: rgb(153, 170, 128);
+    color: Black;
+    height: 25px;
+    width: 90px;
+    border: black 2px;
+    padding: 1px;
+    margin: 3px;
+  }
+  .addToCartButton:hover{
+    background-color: rgb(216, 238, 182);
+  }
+
+
+  .custom-image-style{
+    display: flex;
+  justify-content: center;
+    padding: 4px;
+    margin: auto;
+    width: 220px;
+    max-height: 200px;
+
+    margin-top: 10px;
+    aspect-ratio: 4/3;
+  }
+
+
+
+
+.card-card-block{
+
+  border-radius: 25px;
+  margin: 2px;
+  border: black 3px;
+  padding: 9px;
+  background-color: gray;
+}
+
+.col-md-4{
+
+  border-radius: 25px;
+  background-color: rgb(66, 66, 66);
+  padding: 3px;
+}
+
+
+.container_row{
+
+  padding: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 70%;
+  /* outline: red dotted; */
+}
