@@ -1,34 +1,13 @@
-<h1 class="titlecontainer">Upload your images</h1>
 <div class="container">
 
-
-
-
-
-<form>
-  <label for="title">Title</label><br>
-  <input type="text" class="form-control" id="title" placeholder="Image Title" [(ngModel)]="image.title" name="title"><br><br>
-
-  <label for="description">Description</label><br>
-  <input type="text" class="form-control" id="description" placeholder="Image description" name="description" [(ngModel)]="image.description"><br><br>
-
-  <label for="tags">tags</label><br>
-  <input type="text" class="form-control" id="tags" placeholder="Image Tags" name="tags" [(ngModel)]="image.tags"><br><br>
-
-  <label for="category">category</label><br>
-  <input type="text" class="form-control" id="category" placeholder="Image category" name="category" [(ngModel)]="image.category"><br><br>
-
-  <label for="price">Price</label><br>
-  <input type="text" class="form-control" id="price" placeholder="price" name="price" [(ngModel)]="image.price"><br>
-
-    <br>
-    <label for="price">Chooose an image to upload</label><br>
-    <input type="file" (change)="onFileChanged($event)">
-    <img [src]="imgURL" height="200" width="200" *ngIf="imgURL">
-
-  <br><br>
-  <button type="button" class="btn btn-success" (click)="saveImage()">Save Image</button>
-</form>
-
-
-</div>
+  <a class="btn btn-primary mb-3" (click)="addImage()">Add New Image</a>
+  <div class="container row">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-6">
+      <app-useraddimage *ngIf="action === 'edit' || action === 'add'" [image]="selectedImage" (imageAddedEvent)="refreshData()"></app-useraddimage> <br>
+      
+    </div>
+  </div>
+  </div>
+  

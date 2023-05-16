@@ -1,0 +1,57 @@
+label{
+    line-height: 2.3;
+}
+
+input {
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    border: 1px solid #FFFFFF;
+    background: #f2f2f200;
+    color: #FFFFFF;
+}
+
+.btn{
+   padding: 0.5rem;
+   border-radius: 0.3rem;
+   border: 0;
+   background: #2b6c86;
+   color: #FFFFFF;
+   cursor: pointer;
+   transition: 0.2s;
+}
+
+.btn:hover{
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    border: 0;
+    background: #86bace;
+    color: #312f2f;
+    cursor: pointer;
+    transition: 0.2s;
+ }
+
+ .btn:active{
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    border: 0;
+    background: #0e2e3a;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: 0.2s;
+ }
+
+input[type="file"]::file-selector-button{
+    cursor: pointer;
+    border-radius: 0.2rem;
+    padding: 0.2em 0.8em;
+    border: 0;
+}
+
+input[type="file"]::file-selector-button:active{
+    cursor: pointer;
+    border-radius: 0.2rem;
+    padding: 0.2em 0.8em;
+    border: 0;
+    background: #5b5b5b;
+    color: #FFFFFF;
+}
