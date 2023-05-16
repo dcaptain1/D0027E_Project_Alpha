@@ -3,9 +3,8 @@ header {
   justify-content: space-between ;
   align-items: center;
   margin-bottom: 20px;
-
-  border-bottom: 1px solid #b8b3b3;
-
+  border-bottom: 1px solid #a0a9bd;
+  background-color: rgb(48, 47, 47);
 
 }
 
@@ -13,4 +12,22 @@ a:hover{
 /*background-color: blue;*/
 color: rgb(255, 255, 255);
 
+}
+
+
+
+.logoImage{
+  padding: 2px;
+  margin: 2px;
+  border-radius: 200px;
+  height: 90px;
+  width: 110px;
+  aspect-ratio: 4/3;
+}
+
+
+.logoImage:hover{
+  color: rgb(147, 188, 247);
+  cursor: pointer;
+  background-color: rgb(50, 59, 141);
 }

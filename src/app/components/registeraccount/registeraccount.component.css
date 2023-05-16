@@ -2,15 +2,15 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background-color: black;
+
   }
-  
+
   .registration-page {
     width: 360px;
     padding: 8% 0 0;
     margin: auto;
   }
-  
+
   .form {
     position: relative;
     z-index: 1;
@@ -22,7 +22,7 @@ body {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
-  
+
   .registration-form input {
     font-family: "Roboto", sans-serif;
     outline: 0;
@@ -34,7 +34,7 @@ body {
     box-sizing: border-box;
     font-size: 14px;
   }
-  
+
   .registration-form button {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
@@ -48,23 +48,22 @@ body {
     cursor: pointer;
     border-radius: 5px;
   }
-  
+
   .registration-form button:hover, .registration-form button:active, .registration-form button:focus {
     background: #2b6c86;
   }
-  
+
   .registration-form .message {
     margin: 15px 0 0;
     color: #000000;
     font-size: 12px;
   }
-  
+
   .registration-form .message a {
     color: #2b6c86;
     text-decoration: none;
   }
-  
+
   .registration-form .message a:hover {
     text-decoration: underline;
   }
-  
