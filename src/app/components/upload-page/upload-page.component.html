@@ -1,6 +1,8 @@
 
-<div class="new container">
-<h1>Welcome to Bothnia!</h1><br>
+<div class="newcontainer"><h1>Welcome to Bothnia!</h1><br></div>
+
+<div class="newcontainer">
+
 
 <p>
   We're thrilled to have you here, <br><br>Upload your images is super easy and you only need to follow a short few steps:
@@ -23,13 +25,14 @@ That's it! By following these steps, users should be able to upload images to yo
 </p>
 
 
-
+<div class="newcontainer">
+  <a class="btn btn-primary mb-3" (click)="addImage()">Add New Image</a>
+</div>
 
 
 <div class="container">
 
 
-  <a class="btn btn-primary mb-3" (click)="addImage()">Add New Image</a>
 
 </div>
 
@@ -38,8 +41,7 @@ That's it! By following these steps, users should be able to upload images to yo
     </div>
     <div class="col-md-6">
       <app-useraddimage *ngIf="action === 'edit' || action === 'add'" [image]="selectedImage" (imageAddedEvent)="refreshData()"></app-useraddimage> <br>
-      
+
     </div>
   </div>
 
-  
