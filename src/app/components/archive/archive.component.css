@@ -99,27 +99,21 @@ h1{
   }
 
 
-  .detailContainer{
-    width: 20%;
-    height: auto;
-    /*border: red dotted;*/
-    display: flex;
-    position: fixed;
-    right: 0;
-    justify-self: center;
-    align-items: center;
-    text-align: left;
-  }
 
 
 
   .tooltip {
+    height: 25px;
+    width: 60px;
+    text-align: center;
+    color: black;
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted black;
+    border: black 2px;
     background-color: gray;
     margin: 3px;
     padding: 1px;
+
   }
 
   .tooltip .tooltiptext {
@@ -139,3 +133,19 @@ h1{
   .tooltip:hover .tooltiptext {
     visibility: visible;
   }
+  .tooltip:hover{
+    background-color: rgb(221, 221, 221);
+  }
+
+
+  .addToCartButton{
+    background-color: rgb(203, 224, 171);
+    color: Black;
+    height: 25px;
+    width: 90px;
+    border: black 2px;
+    padding: 1px;
+    margin: 3px;
+  }
+
+
