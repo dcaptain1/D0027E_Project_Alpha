@@ -23,7 +23,7 @@
        placeholder="Search for pictures..." name="Q">
 
 
-      <button id="SearchIcon" id="buttonSearch">
+      <button class="SeachButton" id="SearchIcon" id="buttonSearch">
         <img src="..\assets\Images/search_icon.png" alt="Picture of search icon">
       </button>
 
@@ -45,9 +45,16 @@
 
               </div>
               <div class="offset-md-4 col-md-4">
-                  <button class="btn btn-primary btn-sm" (click)="addToCart(image.id)"
+                  <button class="addToCartButton" (click)="addToCart(image.id)"
                      >Add To Cart</button>
+
+                     <div class="tooltip" (mouseover)="detailsImage(image.id)">  Details
+                      <span class="tooltiptext">
+                          <app-details *ngIf="action === 'view'" [image]="selectedImage"></app-details>
+                      </span>
+                    </div>
               </div>
+
           </div>
 
       </div>
@@ -55,48 +62,67 @@
 </div>
 
 
+<hr>
+<hr>
+
+
 
 <div class="container row">
+  <div class="CartContainer">
+
+
+
 
   <div class="col-md-10 custom-products-cart-container">
       <div class="offset-md-8">
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="Shoppingcart">
 
               <li class="dropdown">
                   <br>
-                  <a href="#" class="btn btn-info btn-lg" data-toggle="dropdown" role="button" aria-expanded="false">
-                      <span class="fa fa-shopping-cart">
+                  <a  class="btn btn-info btn-lg" data-toggle="dropdown" role="button" aria-expanded="false">
+                      <span class="shopping-cart">
                           Images Added In Cart:
                       </span>
                       <span class="caret">{{cartImages.length}}</span>
                   </a>
-                  <ul class="dropdown-menu dropdown-cart" role="menu">
-                      <li *ngFor="let item of cartImages">
-                          <div class="item product-cart-item row">
+                  <ul class="dropdown-menu-dropdown-cart" role="menu">
+                      <li class="listOfItems" *ngFor="let item of cartImages">
+                          <div class="ItemRow">
                               <div class="col-md-8" *ngIf="item">{{item.title}}</div>
                               <div class="col-md-4" *ngIf="item"><strong>${{item.price}}</strong></div>
                           </div>
                       </li>
                       <hr>
-                      <li><a class="btn btn-small btn-success" role="button" (click)="goToCart()">View Cart</a></li>
+                      <li class="li"><a class="GoToCartButton" role="button" (click)="goToCart()">View Cart</a></li>
                       <br>
-                      <li *ngIf="cartImages.length > 0">
-                          <a class="btn btn-small btn-warning" role="button" (click)="emptyCart()">Empty Cart</a></li>
-                  </ul>
-              </li>
-          </ul>
-      </div>
+                      <li class="li" *ngIf="cartImages.length > 0">
+                          <a class="EmptyCartButton" role="button" (click)="emptyCart()">Empty Cart</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
   </div>
+
 </div>
 
-<hr>
-<hr>
 
+<!--
+<div class="detailContainer">
+  <div>
+    <h1> Details: </h1>
+    <app-details *ngIf="action === 'view'" [image]="selectedImage"></app-details>
 
+  </div>
 
+</div>
+ -->
 
 <div class="container_row">
+
   <div class="col-md-4" *ngFor="let image of images; let i=index">
+
+
       <div class="card-card-block">
           <img class="custom-image-style" img src="{{image.retrievedImage}}" >
 
@@ -106,11 +132,37 @@
 
               </div>
               <div class="offset-md-4 col-md-4">
-                  <button class="btn btn-primary btn-sm" (click)="addToCart(image.id)"
-                     >Add To Cart</button>
+                <!-- <button type="button" class="btn btn-primary" (click)="detailsImage(image.id)">Details</button> -->
+                <button class="addToCartButton" (click)="addToCart(image.id)"
+                  >Add To Cart</button>
+
+                  <div class="tooltip" (mouseover)="detailsImage(image.id)">  Details
+                    <span class="tooltiptext">
+                          <app-details *ngIf="action === 'view'" [image]="selectedImage"></app-details>
+                      </span>
+                    </div>
               </div>
+
           </div>
 
+
+
+
+
       </div>
+
+
+
   </div>
+
+
+
+
+
+
+
+
 </div>
+
+
+

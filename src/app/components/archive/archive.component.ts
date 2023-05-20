@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Image } from 'src/app/model/Image';
+import { PopUpComponent } from 'src/app/pop-up/pop-up.component';
 import { HttpClientService } from 'src/app/service/http-client.service';
+
 
 @Component({
   selector: 'app-archive',
@@ -10,25 +12,43 @@ import { HttpClientService } from 'src/app/service/http-client.service';
 })
 export class ArchiveComponent implements OnInit {
 
+
+
   images: Array<Image>;
   imagesStored: Array<Image>;
 
   imagesRecieved: Array<Image>;
+  selectedImage:any;
+  action: string;
 
 
 
   cartImages: any;
   savedSearchKeyword: any;
   visibleImages: Image[];
-  constructor(private router: Router, private httpClientService: HttpClientService) { }
+  dialog: any;
+  constructor(private router: Router, private activedRoute: ActivatedRoute,private httpClientService: HttpClientService) { }
 
 
   ngOnInit() {
-
-
-
     this.httpClientService.getImages().subscribe(
       response => this.handleSuccessfulResponse(response),
+    );
+    this.activedRoute.queryParams.subscribe(
+      (params) => {
+        // get the url parameter named action. this can either be add or view.
+        this.action = params['action'];
+	// get the parameter id. this will be the id of the book whose details
+	// are to be displayed when action is view.
+	const id = params['id'];
+	// if id exists, convert it to integer and then retrive the book from
+	// the books array
+    if (id) {
+        this.selectedImage = this.images.find(image => {
+        return image.id === + id;
+          });
+        }
+      }
     );
     //from localstorage retrieve the cart item
     let data = localStorage.getItem('cart');
@@ -68,8 +88,14 @@ export class ArchiveComponent implements OnInit {
 
         for (let i = 0; i < this.images.length; i++) {
           //console.log (this.images[i].title);
-          if (this.images[i].title.toString().includes(this.savedSearchKeyword) ) {
+          if (this.images[i].title.toString().includes(this.savedSearchKeyword) ||
+          (this.images[i].tags.toString().includes(this.savedSearchKeyword)
+
+
+
+          )) {
             //console.log("FOUND IMAGE: "+this.images[i].title);
+            console.log("FOUND IMAGE: "+this.images[i].tags);
 
 
             //Updatera synliga bilder här...
@@ -95,7 +121,7 @@ export class ArchiveComponent implements OnInit {
               }
 
 
-            break;
+            //break;
 
 
 
@@ -137,6 +163,9 @@ export class ArchiveComponent implements OnInit {
       const imagewithRetrievedImageField = new Image();
       imagewithRetrievedImageField.id = image.id;
       imagewithRetrievedImageField.title = image.title;
+      imagewithRetrievedImageField.description = image.description;
+      imagewithRetrievedImageField.category = image.category;
+      imagewithRetrievedImageField.tags= image.tags;
       //populate retrieved image field so that images can be displayed
       imagewithRetrievedImageField.retrievedImage = 'data:image/jpeg;base64,' + image.picByte;
 
@@ -186,10 +215,11 @@ export class ArchiveComponent implements OnInit {
     localStorage.clear();
   }
 
+  detailsImage(id: number) {
+    this.router.navigate(['Archive'], { queryParams: { id, action: 'view' } });
+  }
 
 
 
 
 }
-
-

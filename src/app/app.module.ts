@@ -22,6 +22,13 @@ import { ImagesComponent } from './images/images.component';
 import { AddimagesComponent } from './images/addimages/addimages.component';
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
 import { ViewimagesComponent } from './images/viewimages/viewimages.component';
+import { DetailsComponent } from './components/archive/details/details.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UseraddimageComponent } from './components/upload-page/useraddimage/useraddimage.component';
+
+
+
+
 
 
 
@@ -37,6 +44,7 @@ const appRoute: Routes= [
   {path: "register", component: RegisteraccountComponent},
   { path: "Images", component: ImagesComponent },
   {path: "Admin-Page",component: AdminPageComponent}
+
 ]
 
 
@@ -57,14 +65,21 @@ const appRoute: Routes= [
     ImagesComponent,
     AddimagesComponent,
     AdminPageComponent,
-    ViewimagesComponent
+    ViewimagesComponent,
+    DetailsComponent,
+    UseraddimageComponent,
+
+
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoute),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

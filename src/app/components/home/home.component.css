@@ -72,3 +72,10 @@
   cursor: pointer;
   background-color: #e70505;
 }
+
+
+
+.buttonStyle:hover, .buttonStyle2:hover{
+  background: #71a1b4;
+  color: #3c2d2d;
+}
