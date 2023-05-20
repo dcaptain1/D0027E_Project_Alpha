@@ -95,6 +95,7 @@ export class ArchiveComponent implements OnInit {
 
           )) {
             //console.log("FOUND IMAGE: "+this.images[i].title);
+            console.log("FOUND IMAGE: "+this.images[i].tags);
 
 
             //Updatera synliga bilder här...
@@ -120,7 +121,7 @@ export class ArchiveComponent implements OnInit {
               }
 
 
-            break;
+            //break;
 
 
 
